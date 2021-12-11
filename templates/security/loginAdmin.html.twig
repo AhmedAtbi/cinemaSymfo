@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+
+<section class="w3l-login">
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="logo">
+                <a class="brand-logo"></a>
+            </div>
+            <div class="form-section">
+                <h3>Login</h3>
+                <h6>To continue with Us</h6>
+                <form action="#" method="post" class="signin-form">
+                    <div class="form-input">
+
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                    </div>
+                    <div class="form-input">
+                        <label for="Password"></label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    </div>
+
+
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    {#
+                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                        See https://symfony.com/doc/current/security/remember_me.html
+
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Remember me
+                            </label>
+                        </div>
+                    #}
+
+                    <button class="btn btn-primary theme-button mt-4" type="submit">
+                        Log in
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- login form -->
+
+
+
+
+    {% endblock %}

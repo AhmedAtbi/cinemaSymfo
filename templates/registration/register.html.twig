@@ -1,0 +1,62 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Sign UP</title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+
+{% block body %}
+   {{ form_start(registrationForm) }}
+    <!-- Signup form -->
+    <section class="w3l-signup">
+        <div >
+            <div class="wrapper">
+                <div class="logo">
+                    <a class="brand-logo" href="index.html">Signup form</a>
+                </div>
+                <div class="form-section">
+                    <h3>Sign up</h3>
+                    <div class="form-input">
+
+                        {{ form_widget(registrationForm.username,{'attr':{'placeholder':'Username' }})}}
+
+
+                    </div>
+                    <div class="form-input">
+                        {{ form_widget(registrationForm.email,{'attr':{'placeholder':'Email' }})}}
+                    </div>
+                    <div class="form-input">
+                        {{ form_widget(registrationForm.plainPassword,{'attr':{'placeholder':'Password' }})}}
+                    </div>
+                    <div>
+                    </div>
+                    <button type="submit" class="btn btn-primary theme-button mt-4">Sign Up</button>
+                    <p class="signup">Already a customer? <a href={{path("app_loginClient")}} class="signuplink">Login now</a></p>
+                </div>
+            </div>
+        </div>
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+
+
+        <!-- //copyright -->
+    </section>
+
+    <!-- /Signup form -->
+    {{ form_end(registrationForm) }}
+{% endblock %}
+
+</html>
